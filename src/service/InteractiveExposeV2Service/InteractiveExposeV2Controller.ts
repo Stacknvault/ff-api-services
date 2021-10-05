@@ -33,4 +33,17 @@ export class InteractiveExposeV2Controller extends APIClient {
     deleteEmailTemplate(id: string) {
         return this.invokeApiWithErrorHandling(`/email-template/${id}`, 'DELETE');
     }
+
+    /**
+     * 
+     * @param fileName The name of the file
+     * @param expirySeconds If not set it will be 300s
+     * @returns 
+     */
+    createAttachmentLink(fileName: string, expirySeconds = 300) {
+        if (!fileName) {
+            throw new Error('The fileName is null');
+        }
+        return this.invokeApiWithErrorHandling<InteractiveExposeV2ServiceTypes.EmailTemplate>('/create-attachment-url', 'POST', undefined, { queryParams: { fileName, expirySeconds }});
+    }
 }
