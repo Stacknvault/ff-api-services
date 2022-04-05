@@ -12,8 +12,15 @@ export namespace MatchmakingTypes {
         offeredAt: number;
     }
 
+    /**
+     * @typedef Match A result entry in a matchmaking search
+     * @prop {number} accuracy The accuracy of the match related to the optional criteria (0-100)
+     * @prop {OfferedStatus} offeredStatus Whether the estate was already offered to the customer or not and when
+     * @prop {UpdatedField[]} updatedFields Updated fields of the entity with respect to the latest offer
+     * @prop {Entity} entity The entity that matched the search (Estate or SearchProfile) 
+     */
     export interface Match {
-        coincidence: number;
+        accuracy: number;
         offeredStatus: OfferedStatus;
         updatedFields: UpdatedField[];
         entity: Entity;
