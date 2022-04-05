@@ -13,6 +13,7 @@ export namespace MatchmakingTypes {
     }
 
     export interface Match {
+        coincidence: number;
         offeredStatus: OfferedStatus;
         updatedFields: UpdatedField[];
         entity: Entity;
