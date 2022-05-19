@@ -76,6 +76,24 @@ export default class MatchController extends APIClient {
     }
 
     /**
+     * Fetch matches for a given search profile.
+     * @param searchProfile
+     *      A search profile entity
+     * @param query
+     *      The query to filter special results
+     */
+     async matchForSearchProfileWithBodyAndReportCSV(
+        searchProfile: Entity,
+        query: MatchmakingTypes.FilterQuery = {},
+    ) {
+        return await this.invokeApiWithErrorHandling(`/match/search-profile/csv`, 'POST', searchProfile, {
+            queryParams: {
+                ...query,
+            },
+        });
+    }
+
+    /**
      * Fetch matches for a given estate id.
      * @param estateId
      * @param query
