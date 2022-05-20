@@ -86,7 +86,7 @@ export default class MatchController extends APIClient {
         searchProfile: Entity,
         query: MatchmakingTypes.FilterQuery = {},
     ) {
-        return await this.invokeApiWithErrorHandling(`/match/search-profile/csv`, 'POST', searchProfile, {
+        return await this.invokeApiWithErrorHandling<string>(`/match/search-profile/csv`, 'POST', searchProfile, {
             queryParams: {
                 ...query,
             },
