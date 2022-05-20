@@ -82,7 +82,7 @@ export default class MatchController extends APIClient {
      * @param query
      *      The query to filter special results
      */
-     async matchForSearchProfileWithBodyAndReportCSV(
+     async fetchMatchingAsCSV(
         searchProfile: Entity,
         query: MatchmakingTypes.FilterQuery = {},
     ) {
