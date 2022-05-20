@@ -76,20 +76,21 @@ export default class MatchController extends APIClient {
     }
 
     /**
-     * Fetch matches for a given search profile.
+     * Fetch matches for a given search profile as CSV.
      * @param searchProfile
      *      A search profile entity
      * @param query
      *      The query to filter special results
      */
-     async fetchMatchingAsCSV(
+     async fetchMatching(
         searchProfile: Entity,
         query: MatchmakingTypes.FilterQuery = {},
     ) {
-        return await this.invokeApiWithErrorHandling<string>(`/match/search-profile/csv`, 'POST', searchProfile, {
+        return await this.invokeApiWithErrorHandling<MatchmakingTypes.CSVStream>(`/match/search-profile/csv`, 'POST', searchProfile, {
             queryParams: {
                 ...query,
             },
+            responseType: 'stream'
         });
     }
 

@@ -49,4 +49,6 @@ export namespace MatchmakingTypes {
             values: MapMatchAddress[];
         };
     }
+
+    export type CSVStream =  ReadableStream;
 }
