@@ -31,7 +31,7 @@ export { default as ImporterFlowFactTransferService } from './service/ImporterFl
 export { default as EntityService, Operation } from './service/EntityService';
 export type { TrashedEntity, TrashedEntitiesResponse, TrashedEntitySchemaName, TrashedEntityIds, PrefixData } from './service/EntityService';
 
-export * from './service/common/types/TranslatableText'
+export * from './service/common/types/TranslatableText';
 export * from './service/SchemaService';
 export * from './service/GDPRService';
 export * from './service/IS24LeadService';
@@ -48,7 +48,6 @@ export * from './service/MultimediaService';
 export * from './service/DocumentGeneratorService';
 export * from './service/DocumentTemplateService';
 export * from './service/ViewDefinitionService';
-export * from './service/ImportPreparationService';
 export * from './service/SampleDataService';
 export * from './service/RelogService';
 export * from './service/MatchmakingService';

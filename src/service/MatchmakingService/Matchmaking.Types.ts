@@ -63,4 +63,6 @@ export namespace MatchmakingTypes {
         contactName: string;
         searchProfiles: SearchProfile[];
     }
+    
+    export type CSVStream =  ReadableStream;
 }
