@@ -49,4 +49,18 @@ export namespace MatchmakingTypes {
             values: MapMatchAddress[];
         };
     }
+
+    export interface SearchProfile {
+        id: string;
+        status: {
+            values: ('active' | 'inactive')[];
+        };
+    }
+
+    export interface Prospect {
+        id: string;
+        companyLogo: string;
+        contactName: string;
+        searchProfiles: SearchProfile[];
+    }
 }
