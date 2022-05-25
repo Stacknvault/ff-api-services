@@ -50,5 +50,28 @@ export namespace MatchmakingTypes {
         };
     }
 
+    export interface SearchProfile {
+        id: string;
+        status: {
+            values: ('active' | 'inactive')[];
+        };
+    }
+
+    export interface Prospect {
+        id: string;
+        companyLogo: string;
+        contactName: string;
+        searchProfiles: SearchProfile[];
+    }
+    
     export type CSVStream =  ReadableStream;
+
+    export interface SearchProfileLink {
+        companyId: string;
+        expirationDate: Date,
+        id: string;
+        link: string;
+        prospectId: string;
+        userId: string;
+    }
 }

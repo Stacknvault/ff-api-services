@@ -16,12 +16,17 @@ export class SendController extends APIClient {
      * Sends a mail using the new draft_email endpoint.
      * @param draftMailEntityId
      *      The id of a entity (schema draft_email)
+     * @param sendSearchProfilesLink
+     *      Optional parameter to generate search profiles links during email sending
      */
-    async sendMailV2(draftMailEntityId: string) {
+    async sendMailV2(draftMailEntityId: string, sendSearchProfilesLink =  false) {
         return this.invokeApiWithErrorHandling(`/emails/send/${draftMailEntityId}`, 'POST', undefined, {
             headers: {
                 'x-ff-version': 2,
             },
+            params: {
+                sendSearchProfilesLink
+            }
         });
     }
 }
