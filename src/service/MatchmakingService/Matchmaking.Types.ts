@@ -65,4 +65,13 @@ export namespace MatchmakingTypes {
     }
     
     export type CSVStream =  ReadableStream;
+
+    export interface SearchProfileLink {
+        companyId: string;
+        expirationDate: Date,
+        id: string;
+        link: string;
+        prospectId: string;
+        userId: string;
+    }
 }
