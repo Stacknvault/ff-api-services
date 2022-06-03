@@ -98,7 +98,7 @@ export class EntityService extends APIClient {
      * @param schemaId
      * @param entityId
      * @param viewId
-     * @deprecated Use stringifyEntityByType instead.
+     * @deprecated Use useEntityRelationView hook in frontend instead.
      */
     async stringifyEntity(schemaId: string, entityId: string, viewId = 'EntityRelationView'): Promise<AxiosResponse<string | undefined>> {
         return this.invokeApi(`/views/${viewId}/schemas/${schemaId}/entities/${entityId}/stringify`);
@@ -108,6 +108,7 @@ export class EntityService extends APIClient {
      * Get a stringified entity by type instead of viewId
      * @param schemaName
      * @param entityId
+     * @deprecated Use useEntityRelationView hook in frontend instead.
      */
     async stringifyEntityByType(schemaName: string, entityId: string): Promise<AxiosResponse<string | undefined>> {
         return this.invokeApi(`/views/schemas/${schemaName}/entities/${entityId}/stringify`);
