@@ -107,7 +107,7 @@ export class SearchService extends APIClient {
      * @param groupBy
      */
     async count(query: Flowdsl, index: string, groupBy?: string) {
-        return await this.invokeApi('/schemas/' + index + '/count', 'POST', query, {
+        return await this.invokeApiWithErrorHandling('/schemas/' + index + '/count', 'POST', query, {
             queryParams: {
                 groupBy: groupBy,
             },
