@@ -74,6 +74,7 @@ const APIMapping = {
     getResponseService: new APIService('getresponse-integration-service'),
     historyModuleService: new APIService('history-module-service'),
     importerFlowFactTransferService: new APIService('importer-flowfact-transfer-service'),
+    importPreparationService: new APIService('import-preparation-service'),
     inquiryService: new APIService('inquiry-service'),
     interactiveExposeDeliveryService: new APIService('interactive-expose-delivery-service'),
     interactiveExposeService: new APIService('interactive-expose-service'),
