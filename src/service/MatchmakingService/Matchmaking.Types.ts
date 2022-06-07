@@ -51,14 +51,36 @@ export namespace MatchmakingTypes {
     }
 
     export interface SearchProfile {
+        estateType: 'flat' | 'house';
         id: string;
-        status: {
-            values: ('active' | 'inactive')[];
+        message: string;
+        priceMax: number;
+        priceMin: number;
+        roomsMax: number;
+        roomsMin: number;
+        squareMetersMax: number;
+        squareMetersMin: number;
+        status: 'active' | 'inactive';
+        typeOfInterest: 'purchase' | 'rent';
+    }
+
+    export interface ProspectCompany {
+        companyCity: string;
+        companyMailInfo: string;
+        companyName: string;
+        companyPhoneInfo: string;
+        companyPostcode: string;
+        companyStreet: string;
+        companyUrlImprint: string;
+        companyUrlPrivacy: string;
+        logo: {
+            url: string;
         };
     }
 
     export interface Prospect {
         id: string;
+        company: ProspectCompany;
         companyLogo: string;
         contactName: string;
         searchProfiles: SearchProfile[];
