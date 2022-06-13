@@ -21,4 +21,10 @@ export namespace FlowfactImporterServiceTypes {
         userId: string;
         s3Identifier: string;
     }
+
+    export interface MappingFileInfo {
+        id: string;
+        lastModified: Date;
+        size: number;
+    }
 }
