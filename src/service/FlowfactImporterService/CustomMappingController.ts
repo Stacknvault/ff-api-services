@@ -14,6 +14,11 @@ export class CustomMappingController extends APIClient {
         });
     }
 
+    /** Fetch custom mapping data from s3 bucket */
+    async fetchAllCustomMappings() {
+        return this.invokeApiWithErrorHandling<string>(`/custom-mapping`, 'GET');
+    }
+
     /** Save custom mapping data into s3 bucket */
     async createCustomMapping(mappingId: string, mapping: string) {
         return this.invokeApiWithErrorHandling<void>(`/custom-mapping`, 'POST', mapping, {
