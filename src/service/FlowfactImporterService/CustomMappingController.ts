@@ -1,4 +1,5 @@
 import { APIClient, APIMapping } from '../../http';
+import { FlowfactImporterServiceTypes } from './FlowfactImporterService.Types';
 
 export class CustomMappingController extends APIClient {
     constructor() {
@@ -16,7 +17,7 @@ export class CustomMappingController extends APIClient {
 
     /** Fetch custom mapping data from s3 bucket */
     async fetchAllCustomMappings() {
-        return this.invokeApiWithErrorHandling<string>(`/custom-mapping`, 'GET');
+        return this.invokeApiWithErrorHandling<FlowfactImporterServiceTypes.MappingFileInfo[]>(`/custom-mapping`, 'GET');
     }
 
     /** Save custom mapping data into s3 bucket */
