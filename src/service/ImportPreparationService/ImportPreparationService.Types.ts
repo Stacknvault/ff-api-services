@@ -1,4 +1,4 @@
-export namespace FlowfactImporterServiceTypes {
+export namespace ImportPreparationServiceTypes {
     export type ImporterState = 'PREPARATION' | 'READY';
 
     export interface ImporterStatus {
@@ -20,11 +20,5 @@ export namespace FlowfactImporterServiceTypes {
         companyId: string;
         userId: string;
         s3Identifier: string;
-    }
-
-    export interface MappingFileInfo {
-        id: string;
-        lastModified: Date;
-        size: number;
     }
 }
