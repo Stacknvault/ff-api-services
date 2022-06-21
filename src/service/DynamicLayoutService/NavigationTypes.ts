@@ -22,6 +22,7 @@ export namespace NavigationTypes {
         metadata?: {
             hideFromCrm?: boolean;
             hideForTrial?: boolean;
+            hideIfCustomizationNotAllowed?: boolean;
         };
     }
 
