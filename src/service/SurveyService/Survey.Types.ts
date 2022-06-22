@@ -1,7 +1,7 @@
 export interface FeedbackSurvey {
-    consentForContact: boolean;
-    rating: number;
-    comment: string;
+    consentForContact?: boolean;
+    rating?: number;
+    comment?: string;
     isScoutManagerUser: boolean;
 }
 
