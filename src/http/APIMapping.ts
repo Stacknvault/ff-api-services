@@ -114,6 +114,7 @@ const APIMapping = {
     spregnetterGatewayService: new APIService('sprengnetter-gateway-service'),
     spregnetterService: new APIService('sprengnetter-service'),
     supportService: new APIService('support-service'),
+    surveyService: new APIService('survey-service'),
     swissLeadService: new APIService('swiss-lead-service'),
     taggingService: new APIService('tagging-service'),
     tagService: new APIService('tag-service'),
