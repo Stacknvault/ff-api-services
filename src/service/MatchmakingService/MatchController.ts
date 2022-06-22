@@ -82,15 +82,12 @@ export default class MatchController extends APIClient {
      * @param query
      *      The query to filter special results
      */
-     async fetchMatching(
-        searchProfile: Entity,
-        query: MatchmakingTypes.FilterQuery = {},
-    ) {
+    async fetchMatching(searchProfile: Entity, query: MatchmakingTypes.FilterQuery = {}) {
         return await this.invokeApiWithErrorHandling<MatchmakingTypes.CSVStream>(`/match/search-profile/csv`, 'POST', searchProfile, {
             queryParams: {
                 ...query,
             },
-            responseType: 'stream'
+            responseType: 'stream',
         });
     }
 
@@ -102,14 +99,7 @@ export default class MatchController extends APIClient {
      * @param size
      * @param offset
      */
-    async fetchMatchesByEstate(
-        estateId: string,
-        query: MatchmakingTypes.FilterQuery = {},
-        sorting?: Sort,
-        size = 10,
-        offset = 0,
-        returnIds = false
-    ) {
+    async fetchMatchesByEstate(estateId: string, query: MatchmakingTypes.FilterQuery = {}, sorting?: Sort, size = 10, offset = 0, returnIds = false) {
         return await this.invokeApiWithErrorHandling<PagedResponse<MatchmakingTypes.Match>>(`/match/estate/${estateId}`, 'GET', undefined, {
             queryParams: {
                 ...query,

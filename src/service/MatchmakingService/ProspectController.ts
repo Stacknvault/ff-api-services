@@ -56,4 +56,37 @@ export default class ProspectController extends APIClient {
             },
         });
     }
+
+    /**
+     * Fetch locations for a given query
+     */
+     async fetchLocationsByQuery(token: string, query: string) {
+        return await this.invokeApiWithErrorHandling(`/public/geo-information/polygons/search?q=${query}`, 'GET', '', {
+            headers: {
+                token,
+            },
+        });
+    }
+
+    /**
+     * Fetch locations for a given names
+     */
+    async fetchLocationsByNames(token: string, names: string[]) {
+        return await this.invokeApiWithErrorHandling(`/public/geo-information/polygons/list?names=${names}&onlyMetadata=false`, 'GET', '', {
+            headers: {
+                token,
+            },
+        });
+    }
+
+    /**
+     * Fetch locations metadata for a given names
+     */
+     async fetchLocationsMetadata(token: string, names: string[]) {
+        return await this.invokeApiWithErrorHandling(`/public/geo-information/polygons/list?names=${names}&onlyMetadata=false`, 'GET', '', {
+            headers: {
+                token,
+            },
+        });
+    }
 }
