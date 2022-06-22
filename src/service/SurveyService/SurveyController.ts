@@ -6,11 +6,11 @@ export class SurveyController extends APIClient {
         super(APIMapping.surveyService);
     }
 
-    submitFeedbackSurvey = async () => {
-        return await this.invokeApiWithErrorHandling<FeedbackSurveyDisplayStatus>('/customerAccess', 'GET');
+    submitFeedbackSurvey = async (survey: FeedbackSurvey) => {
+        return await this.invokeApiWithErrorHandling<FeedbackSurveyDisplayStatus>('/answer', 'POST', survey);
     };
 
-    getSurveyDisplayInfo = async (survey: FeedbackSurvey) => {
-        return await this.invokeApiWithErrorHandling('/customerAccess', 'GET', survey);
+    getSurveyDisplayInfo = async () => {
+        return await this.invokeApiWithErrorHandling('/customerAccess', 'GET');
     };
 }
