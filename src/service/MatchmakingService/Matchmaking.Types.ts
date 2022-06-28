@@ -61,6 +61,8 @@ export namespace MatchmakingTypes {
         roomsMin: number;
         squareMetersMax: number;
         squareMetersMin: number;
+        landAreaMax: number;
+        landAreaMin: number;
         status: 'active' | 'inactive';
         typeOfInterest: 'purchase' | 'rent';
         location: CompoundCondition;
@@ -87,12 +89,12 @@ export namespace MatchmakingTypes {
         contactName: string;
         searchProfiles: SearchProfile[];
     }
-    
-    export type CSVStream =  ReadableStream;
+
+    export type CSVStream = ReadableStream;
 
     export interface SearchProfileLink {
         companyId: string;
-        expirationDate: Date,
+        expirationDate: Date;
         id: string;
         link: string;
         prospectId: string;
