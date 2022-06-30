@@ -31,7 +31,7 @@ export { default as ImporterFlowFactTransferService } from './service/ImporterFl
 export { default as EntityService, Operation } from './service/EntityService';
 export type { TrashedEntity, TrashedEntitiesResponse, TrashedEntitySchemaName, TrashedEntityIds, PrefixData } from './service/EntityService';
 
-export * from './service/common/types/TranslatableText'
+export * from './service/common/types/TranslatableText';
 export * from './service/SchemaService';
 export * from './service/GDPRService';
 export * from './service/IS24LeadService';
@@ -97,6 +97,7 @@ export * from './service/FlowfactImporterService';
 export * from './service/MaintenanceStatusService';
 export * from './service/GetResponseSyncIntegrationService';
 export * from './service/SurveyService';
+export * from './service/ImporterTransformerService';
 
 export * from './http';
 export * from './util/EnvironmentManagement';
