@@ -1,3 +1,4 @@
+import { CompoundCondition } from '@flowfact/node-flowdsl';
 import { Entity } from '@flowfact/types';
 
 export namespace MatchmakingTypes {
@@ -62,6 +63,7 @@ export namespace MatchmakingTypes {
         squareMetersMin: number;
         status: 'active' | 'inactive';
         typeOfInterest: 'purchase' | 'rent';
+        location: CompoundCondition;
     }
 
     export interface ProspectCompany {
