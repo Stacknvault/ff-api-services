@@ -8,4 +8,9 @@ export namespace ImporterTransformerService {
         action?: string;
         version?: string;
     }
+
+    export interface CacheData {
+        SK: string;
+        value: unknown[];
+    }
 }
