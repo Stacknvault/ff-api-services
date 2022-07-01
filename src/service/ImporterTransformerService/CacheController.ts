@@ -1,4 +1,5 @@
 import { APIClient, APIMapping } from '../../http';
+import { ImporterTransformerService } from './ImporterTransformerService.Types';
 
 export class CacheController extends APIClient {
     constructor() {
@@ -7,7 +8,7 @@ export class CacheController extends APIClient {
 
     /** Fetch data from cache for transformer name */
     async fetchCache(transformerName: string, key?: string) {
-        return this.invokeApiWithErrorHandling<string>(`/transformer`, 'POST', undefined, {
+        return this.invokeApiWithErrorHandling<ImporterTransformerService.CacheData>(`/cache`, 'GET', undefined, {
             queryParams: {
                 transformer: transformerName,
                 key,

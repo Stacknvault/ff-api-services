@@ -8,6 +8,6 @@ export class TransformerController extends APIClient {
 
     /** Run transformer */
     async runTransformer(runTransformerRequest: ImporterTransformerService.RunTransformerRequest) {
-        return this.invokeApiWithErrorHandling<string>(`/transformer`, 'POST', runTransformerRequest);
+        return this.invokeApiWithErrorHandling<void>(`/transformer`, 'POST', runTransformerRequest);
     }
 }
