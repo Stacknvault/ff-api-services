@@ -20,6 +20,7 @@ export namespace WidgetLayoutTypes {
         global: boolean;
         layout: LayoutContainer;
         domainType: LayoutDomainType;
+        updateComment?: string;
     }
 
     export interface GeneralWidgetLayout extends BaseWidgetLayout {
@@ -30,6 +31,22 @@ export namespace WidgetLayoutTypes {
         schema: string;
         domainType: LayoutDomainType.SCHEMA_BOUND;
         categories?: string[];
+    }
+
+    export interface LayoutSnapshot {
+        id: string;
+        widgetLayoutId: string;
+        layout: LayoutContainer;
+        userId: string;
+        updateComment: string;
+        updatedAt: number;
+    }
+
+    export interface PagedLayoutSnapshots {
+        page: number;
+        size: number;
+        totalCount: number;
+        results: LayoutSnapshot[];
     }
 
     export interface PagedWidgetLayouts {
