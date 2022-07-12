@@ -1,6 +1,7 @@
 import OverviewController from './OverviewController';
 import NavigationController from './NavigationController';
 import WidgetLayoutsController from './WidgetLayoutsController';
+import WidgetLayoutSnapshotController from './WidgetLayoutSnapshotController';
 import WidgetStoreController from './WidgetStoreController';
 import StartPageController from './StartPageController';
 
@@ -14,6 +15,7 @@ export class DynamicLayoutService {
     public readonly startPage: StartPageController;
     public readonly navigation: NavigationController;
     public readonly layouts: WidgetLayoutsController;
+    public readonly snapshots: WidgetLayoutSnapshotController;
     public readonly widgetStore: WidgetStoreController;
 
     constructor() {
@@ -21,6 +23,7 @@ export class DynamicLayoutService {
         this.startPage = new StartPageController();
         this.navigation = new NavigationController();
         this.layouts = new WidgetLayoutsController();
+        this.snapshots = new WidgetLayoutSnapshotController();
         this.widgetStore = new WidgetStoreController();
     }
 }
